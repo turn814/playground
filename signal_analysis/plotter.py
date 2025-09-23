@@ -5,14 +5,14 @@ matplotlib.use("TkAgg")
 from matplotlib import pyplot as plt
 import csv
 
-df = pd.read_csv("plot.csv", delimiter='\n')
-x_data = df['# time step = 0.000005 sec']
+df = pd.read_csv("plot_1.csv", delimiter=',')
+x_data = df["Time (ns)"]
+y_data = df["Amplitude"]
 
 x_int = []
-
-for x in range(len(x_data)-1):
-    if (x_data[x+1] >= 0) and (x_data[x] < 0):
-        x_int.append(x * 0.000005)
+for x in range(len(y_data)-1):
+    if (y_data[x+1] >= 0) and (y_data[x] < 0):
+        x_int.append(x_data[x])
 
 periods = []
 for x in range(len(x_int)-1):
@@ -20,12 +20,7 @@ for x in range(len(x_int)-1):
 
 frequencies = [1/x for x in periods]
 
-plt.subplot(2,1,1)
-plt.hist(periods, bins=500)
+plt.hist(frequencies, bins=50)
 plt.xlabel("Frequency (Hz)")
-
-plt.subplot(2,1,2)
-plt.plot(x_data)
-plt.xlabel("Time")
 
 plt.show()
