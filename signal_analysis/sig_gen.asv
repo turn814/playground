@@ -1,0 +1,9 @@
+clear
+close all
+
+distances = 1:0.0001:150;
+times = distances / 299792458;
+
+tone_low = sin(2*pi*2.402E9*times);
+tone_high = sin(2*pi*2.480E9*times);
+
