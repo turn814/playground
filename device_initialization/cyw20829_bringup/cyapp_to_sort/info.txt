@@ -1,0 +1,4 @@
+name: cyapp_to_sort
+description: The application advances the device LCS from VIRGIN to SORT. It is required to emulate device manufacturing flow on PSVP. The PTE team uses this application create vector for VIRGIN to SORT transition. The valid device LCS to launch this application is VIRGIN.
+type: Firmware application
+version: 1.3.0.4447

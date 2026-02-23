@@ -1,0 +1,4 @@
+name: cyapp_template
+description: This application is template to create provisioning application. It shows interface between the host and device.
+type: Firmware application
+version: 1.3.0.4447

@@ -1,0 +1,4 @@
+name: cyapp_hci_debug
+description: This is internal application that enables extended debug capabilities for the HCI mode devices. The device LCS is changed from NORMAL to NORMAL_NO_SECURE.
+type: Firmware application
+version: 1.3.0.4447
