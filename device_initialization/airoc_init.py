@@ -11,7 +11,7 @@ sys.path.append("C:\\Users\\irvinelabuser\\Infineon\\Tools\\AIROC-Bluetooth-Test
 from infineon.airocbluetoothtool.client import client
 from infineon.airocbluetoothtool.service import DEVICE_TYPE_UART
 
-def initialize_airoc(com_port):
+def initialize_airoc(com_port, baudrate):
     """Opens AIROC python server, initializes AIROC device, tests reset
 
     Args:
@@ -27,7 +27,7 @@ def initialize_airoc(com_port):
     session = client.connect('localhost', 1234)
     print("Connected!")
 
-    device = session.open_device(com_port, DEVICE_TYPE_UART)
+    device = session.open_device(com_port, DEVICE_TYPE_UART, baudrate)
     print("COM port opened!")
 
     print("Sending HCI reset...")
@@ -72,7 +72,7 @@ def enable_epa(device):
 
     return
 
-def download_fw(com_port, fw_path):
+def download_fw_829(com_port, fw_path):
     """
     Downloads RFFW onto 829 devices
     
@@ -82,6 +82,44 @@ def download_fw(com_port, fw_path):
     print("Downloading FW...")
 
     run([r"C:\Users\irvinelabuser\Documents\playground\device_initialization\FW_download_892B0.bat", com_port, fw_path], shell=True)
+
+    return
+
+def download_fw_atomic2(com_port, baud_rate, fw_path):
+    """
+    Downloads RFFW onto Atomic-2 devices
+
+    Args:
+        com_port: COM port of Atomic-2 device
+        baud_rate: baud rate of Atomic-2 device
+        fw_path: path to FW file
+
+    Returns:
+        None
+    """
+    run(["perl", r"C:\Users\irvinelabuser\Documents\playground\device_initialization\FW_download_atomic2.pl", com_port, f"{baud_rate}", fw_path], shell=True)
+
+    return
+
+def launch_ram_atomic2(device):
+    """
+    Launches RAM to activate stored FW
+    
+    Args:
+        com_port: COM port of Atomic-2 device
+        baud_rate: baud rate of Atomic-2 device
+        
+    Returns:
+        None
+    """
+    device.send_hci_command_by_name(
+        "Launch_RAM",
+        Address=0xFFFFFFFF,
+        )
+    print("Waiting for Response...")
+    response = device.wait_for_event()
+    print('Response Received: ')
+    print(response)
 
     return
 
