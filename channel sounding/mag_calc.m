@@ -2,17 +2,21 @@ clear;
 close all;
 
 % Results directory
-top_dir = "C:\Users\irvinelabuser\Documents\Isaac\2025_10_22\OTA_outdoors_v7.5_fixedAGCPtr13\10.0m_to_0.5m\Logs_binary_results";
+top_dir = 'C:\Users\irvinelabuser\Documents\Isaac\Atomic-2\Channel Sounding\2026_02_23\OTA_indoors\main_3m0\10.0m\Logs_binary_results';
 
 % Plot options
 save_plots = false;
 mag_plot = true;
-ch_maps_plot = false;
+ch_maps_plot = true;
 phase_plot = true;
 ppm_plot = true;
 split_mag_plot = false;
-mag_plot_over_proc = true;
+mag_plot_over_proc = false;
 phase_plot_over_proc = true;
+mag_colormap_over_proc = true;
+tqi_plot_over_proc = true;
+distance_estimations = true;
+outliers_removed = false;
 
 % extract dataset name
 set_name_arr = split(top_dir,"\");
@@ -41,6 +45,18 @@ Freq_offset_mat = NaN(result_list_sorted(end),1);
 
 channel_maps = zeros(80,1);
 
+estimations = readtable((top_dir(1:(length(top_dir)-19)) + "Algo_distance_log.csv"),ReadVariableNames=false,Delimiter="comma");
+est_dist = estimations.Var1;
+if outliers_removed
+    for d = 1:length(est_dist)
+        if est_dist(d) >= 250
+            est_dist(d) = est_dist(d-1);
+        end
+    end
+end
+est_time = estimations.Var2;
+est_time_norm = est_time - est_time(1);
+
 % Data compiling
 for i = (result_list_sorted - 1)
 
@@ -52,10 +68,10 @@ for i = (result_list_sorted - 1)
     load(top_dir + "\Binary_result_" + i + "\Qual_Initiator.mat")
     load(top_dir + "\Binary_result_" + i + "\Qual_Reflector.mat")
     
-    [IQ_init_sorted, Ch_init_sorted] = order(IQ_Initiator, Ch_Initiator);
-    [IQ_refl_sorted, Ch_refl_sorted] = order(IQ_Reflector, Ch_Reflector);
-    [Qual_init_sorted, trash1] = order(Qual_Initiator, Ch_Initiator);
-    [Qual_refl_sorted, trash2] = order(Qual_Reflector, Ch_Reflector);
+    [IQ_init_sorted, Ch_init_sorted] = order(IQ_Initiator(1:72), Ch_Initiator(1:72));
+    [IQ_refl_sorted, Ch_refl_sorted] = order(IQ_Reflector(1:72), Ch_Reflector(1:72));
+    [Qual_init_sorted, trash1] = order(Qual_Initiator(1:72), Ch_Initiator(1:72));
+    [Qual_refl_sorted, trash2] = order(Qual_Reflector(1:72), Ch_Reflector(1:72));
     
     IQ_init_dict = dictionary(Ch_init_sorted,IQ_init_sorted);
     IQ_refl_dict = dictionary(Ch_refl_sorted,IQ_refl_sorted);
@@ -126,7 +142,7 @@ if phase_plot
     plot(PCT_phase_normed.')
     title(["PCT product phase"; "('normalized': all lines starting at 0)"; set_name],"Interpreter","none")
     xlabel("Channel #")
-    ylabel("Phase unwrapped")
+    ylabel("Phase unwrapped (deg)")
 end
 
 % PPM plot
@@ -184,14 +200,75 @@ if phase_plot_over_proc
     end
     proc_phase_ch = 40;
     f7 = figure(7);
+    subplot(2,1,1)
     plot(PCT_phase_normed_over_proc)
     % plot(result_list_sorted,calc_phase(IQ_init_sorted_mat(:,proc_phase_ch),IQ_refl_sorted_mat(:,proc_phase_ch)))
-    title(["Phase over procedures by channel "; set_name],"Interpreter","none")
+    title(["Phase over procedures by channel (normalized to start)"; set_name],"Interpreter","none")
     xlabel("Procedure #")
     ylabel("Phase (deg)")
+    subplot(2,1,2)
+    plot(est_time_norm,est_dist)
+    xlabel("Time (s)")
+    ylabel("Distance estimations (m)")
 end
 
-% 
+% Magnitude colormap by channel over procedures
+if mag_colormap_over_proc
+    mag_init_over_proc = calc_mag(IQ_init_sorted_mat);
+    rssi_init_over_proc = calc_rssi(IQ_init_sorted_mat);
+    f8 = figure(8);
+    subplot(3,1,1)
+    clims_mag = [min(min(mag_init_over_proc,[],'omitNaN')) max(max(mag_init_over_proc))];
+    imagesc(mag_init_over_proc.',clims_mag)
+    colorbar
+    title("Magnitude by channel over procedure")
+    xlabel("Procedure #")
+    ylabel("Channel #")
+    subplot(3,1,2)
+    % clims_rssi = [max([-80 min(min(rssi_init_over_proc,[],'omitNaN'))]) max(max(rssi_init_over_proc))];
+    clims_rssi = [max([-140 min(min(rssi_init_over_proc,[],'omitNaN'))]) max(max(rssi_init_over_proc))];
+    % clims_rssi = [-90 max(max(rssi_init_over_proc))];
+    imagesc(rssi_init_over_proc.',clims_rssi)
+    colorbar
+    title("RSSI by channel over procedure")
+    xlabel("Procedure #")
+    ylabel("Channel #")
+    subplot(3,1,3)
+    plot(est_time_norm,est_dist)
+    xlabel("Time (s)")
+    ylabel("Distance estimations (m)")
+
+end
+
+% TQI by channel over procedures
+if tqi_plot_over_proc
+    f9 = figure(9);
+    subplot(3,1,1)
+    clims_qual = [0 3];
+    imagesc(Qual_init_sorted_mat.',clims_qual)
+    colorbar
+    title("Initiator TQI by channel over procedure")
+    xlabel("Procedure #")
+    ylabel("Channel #")
+    subplot(3,1,2)
+    imagesc(Qual_refl_sorted_mat.',clims_qual)
+    colorbar
+    title("Reflector TQI by channel over procedure")
+    xlabel("Procedure #")
+    ylabel("Channel #")
+    subplot(3,1,3)
+    plot(est_time_norm,est_dist)
+    xlabel("Time (s)")
+    ylabel("Distance estimations (m)")
+
+end
+
+if distance_estimations
+    f10 = figure(10);
+    plot(est_time_norm,est_dist)
+    xlabel("Time (s)")
+    ylabel("Distance estimation (m)")
+end
 
 % Save plots
 save_dir = top_dir(1:end-19);
@@ -215,7 +292,21 @@ if save_plots
     if mag_plot_over_proc
         saveas(f6, "IQ_magnitude_over_procedures.png")
     end
+    if phase_plot_over_proc
+        saveas(f7, "Start-normalized_phase_over_procedures.png")
+    end
+    if mag_colormap_over_proc
+        saveas(f8, "Magnitude_colormap_over_procedures.png")
+    end
+    if tqi_plot_over_proc
+        saveas(f9, "TQI_colormap_over_procedures.png")
+    end
+    if distance_estimations
+        saveas(f10, "Algo_distance_log.png")
+    end
 end
+
+cd("C:\Users\irvinelabuser\Documents\Isaac\MATLAB")
 
 function [X_sorted, Ch_sorted] = order(X,X_ch)
     X = X(1:(length(X)-1));
@@ -238,7 +329,7 @@ end
 
 function PCT_prod_phase = calc_phase(IQ_init, IQ_refl)
     PCT_prod = IQ_init .* IQ_refl;
-    PCT_prod_phase = rad2deg(unwrap(phase(PCT_prod)/2));
+    PCT_prod_phase = rad2deg(unwrap(phase(PCT_prod)));
 end
 
 function phase_normalized = norm(calcd_phase, idx)
