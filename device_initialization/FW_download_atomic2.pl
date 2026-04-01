@@ -1,3 +1,4 @@
+$| = 1; # Force immediate output
 use Hci;
 use BTSP;
 use strict;
@@ -22,7 +23,12 @@ DownloadFW($central, 'Atomic-2', $config_central);
 BTSP::SetProtocol($central, 'HCI');
 my $central_addr = ReadBdAddr($central);
 
+print('Closing transport...');
 BTSP::Close($central);
+
+$central = undef;
+
+exit;
 
 sub Reset {
 	my ($transport) = @_;
@@ -61,17 +67,34 @@ sub DownloadFW {
 	}
 	elsif($chip eq 'Atomic-2')
 	{
-		%params = (
-		'Read_Write_Mode' => 'Cortex M3 HCI',
-		'Write_Verify_Mode' => 'Write and verify',
-		'Max_Write_Size' => 240,
-		'Sector_Erase_Mode' => 'Written sectors only',
-		'Config_Image' => $config,
-		'Config_Location' => 'RAM runtime',
-		'SS_Location' => 536899584,
-		'Include_Fixed_Header' => 1,
-		'Include_Fixed_Header_From_Burn_Image' => 1,
-		);
+		if(substr($config, -3) eq 'hcd')
+		{
+			%params = (
+			'Read_Write_Mode' => 'Cortex M3 HCI',
+			'Write_Verify_Mode' => 'Write and verify',
+			'Max_Write_Size' => 240,
+			'Sector_Erase_Mode' => 'Written sectors only',
+			'Config_Image' => $config,
+			'Config_Location' => 'RAM runtime',
+			'SS_Location' => 536899584,
+			'Include_Fixed_Header' => 1,
+			'Include_Fixed_Header_From_Burn_Image' => 1,
+			);
+		}
+		elsif(substr($config, -3) eq 'cgs')
+		{
+			%params = (
+			'Read_Write_Mode' => 'Cortex M3 HCI',
+			'Write_Verify_Mode' => 'Write and verify',
+			'Max_Write_Size' => 240,
+			'Sector_Erase_Mode' => 'Written sectors only',
+			'Config_Image' => $config,
+			'Config_Location' => 'RAM runtime',
+			'SS_Location' => 536899584,
+			'Include_Fixed_Header' => 1,
+			'Include_Fixed_Header_From_Burn_Image' => 0,
+			);
+		}
 	}
 	BTSP::InitiateDownload($transport, \%params);
 	do
@@ -130,10 +153,28 @@ sub ReadBdAddr {
 	if (defined($event{'BD_ADDR'})) {
 		$addr = $event{'BD_ADDR'};
 		print "BD_ADDR of $transport is $addr\n";
+		return $addr;
 	}
 	else {
 		die "BD_ADDR of $transport not found\n"
 	}
 	
-	return $addr;
+	return 1;
+}
+
+END {
+    if (defined $central) {
+        print "\nCleaning up connection to $central...\n";
+        
+        eval {
+            BTSP::Close($central);
+        };
+        
+        if ($@) {
+            # This catches the E0010050 error silently
+            print "Connection was already closed or invalid.\n";
+        } else {
+            print "Connection closed successfully.\n";
+        }
+    }
 }

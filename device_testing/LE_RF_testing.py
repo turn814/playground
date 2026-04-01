@@ -19,7 +19,7 @@ def LE_OP_test(DUT, cbt_ble, channels, output_file, cal_file=r"C:\Users\irvinela
     Args:
         DUT: device object returned from initialize_airoc()
         cbt_ble: cbt object returned from initialize_cbt()
-        channels: list of channels to be tested (ex. 0, 19, 39)
+        channels: list of channels to be tested (ex. [0, 19, 39])
         output_file: opened file object to log measurement results
         cal_file: formatted list of path losses for each channel
 
@@ -27,6 +27,7 @@ def LE_OP_test(DUT, cbt_ble, channels, output_file, cal_file=r"C:\Users\irvinela
         None
     """
     cbt_ble.write_str_with_opc("conf:euts:freq:unit mhz")
+    cbt_ble.write_str_with_opc("conf:euts:patt oth")
 
     f = open(cal_file, mode='r')
     reader = csv.DictReader(f)
@@ -110,6 +111,8 @@ def LE_modchar_test(DUT, cbt_ble, channels, output_file):
     Returns:
         None
     """
+    cbt_ble.write_str_with_opc("conf:euts:patt P11")
+
     output_file.write("\n***Frequency Accuracy (mod char) Test***\n")
     output_file.write("Channel,Frequency Accuracy (kHz)\n")
 
@@ -117,7 +120,7 @@ def LE_modchar_test(DUT, cbt_ble, channels, output_file):
         "LE_Transmitter_Test_[v1]",
         TX_Channel=19,
         Length_of_Test_Data=37,
-        Packet_Payload="Pseudo-Random bit sequence 9"
+        Packet_Payload="Pattern of alternating bits '10101010'"
     )
     print("Waiting for response...")
     response = DUT.wait_for_event()

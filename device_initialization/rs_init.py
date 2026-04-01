@@ -7,7 +7,7 @@ from RsInstrument import *
 import time
 import sys
 
-def initialize_cbt(gpib_addr):
+def initialize_cbt(gpib_addr=""):
     cbt = RsInstrument(f"{gpib_addr}")
     print(cbt.query_str('*IDN?'))
 

@@ -7,6 +7,7 @@ import sys
 from subprocess import run
 from subprocess import Popen
 import time
+from unittest import result
 sys.path.append("C:\\Users\\irvinelabuser\\Infineon\\Tools\\AIROC-Bluetooth-Test-and-Debug-Tool\\1.5.0.3898\\clients\\python\\src")
 from infineon.airocbluetoothtool.client import client
 from infineon.airocbluetoothtool.service import DEVICE_TYPE_UART
@@ -81,7 +82,11 @@ def download_fw_829(com_port, fw_path):
     """
     print("Downloading FW...")
 
-    run([r"C:\Users\irvinelabuser\Documents\playground\device_initialization\FW_download_892B0.bat", com_port, fw_path], shell=True)
+    result = run([r"C:\Users\irvinelabuser\Documents\playground\device_initialization\FW_download_892B0.bat", com_port, fw_path], capture_output=True, text=True, shell=True)
+    print(result.stdout)
+
+    if result.stderr:
+        print(result.stderr)
 
     return
 
