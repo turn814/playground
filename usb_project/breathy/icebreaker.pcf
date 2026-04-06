@@ -1,0 +1,3 @@
+# Pin mapping for iCEBreaker LEDs
+set_io clk      35   # 12MHz crystal
+set_io led      26   # LED 1 (Red)

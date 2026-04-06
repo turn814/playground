@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+release_bindir="$(dirname "${BASH_SOURCE[0]}")"
+release_bindir_abs="$("$release_bindir"/../libexec/realpath "$release_bindir")"
+release_topdir_abs="$("$release_bindir"/../libexec/realpath "$release_bindir/..")"
+#!/usr/bin/env bash
+
+help() {
+	{
+		echo ""
+		echo "Usage: $0 [--exec] [--prefix pf] args.."
+		echo "       $0 --build modname.so cppsources.."
+		echo ""
+		echo "Replacement args:"
+		echo "    --cxx         /usr/local/osxcross/target/bin/x86_64-apple-darwin23.5-clang++"
+		echo "    --cxxflags    $( echo '-Wall -Wextra -ggdb -I${release_topdir_abs}"/share/yosys/include" -MD -MP -D_YOSYS_ -fPIC -I${release_topdir_abs}/include -DYOSYS_VER=\"0.63+190\" -DYOSYS_MAJOR=0 -DYOSYS_MINOR=63 -DYOSYS_COMMIT=190 -std=c++17 -O3 -DYOSYS_ENABLE_READLINE -I/opt/local/include -DYOSYS_ENABLE_PLUGINS -DYOSYS_ENABLE_GLOB -DYOSYS_ENABLE_ZLIB -I/opt/local/include -DYOSYS_ENABLE_TCL -DYOSYS_ENABLE_THREADS -DYOSYS_ENABLE_ABC' | fmt -w60 | sed ':a;N;$!ba;s/\n/ \\\n                      /g' )"
+		echo "    --linkflags   -rdynamic -undefined dynamic_lookup"
+		echo "    --ldflags     (alias of --linkflags)"
+		echo "    --libs        -lstdc++ -lm -lreadline -L/opt/local/lib -lffi -ldl -lz -L/opt/local/lib -ltcl8.6 -ltclstub8.6 -lpthread"
+		echo "    --ldlibs      (alias of --libs)"
+		echo "    --bindir      ${release_topdir_abs}/bin"
+		echo "    --datdir      ${release_topdir_abs}/share/yosys"
+		echo ""
+		echo "All other args are passed through as they are."
+		echo ""
+		echo "Use --exec to call a command instead of generating output. Example usage:"
+		echo ""
+		echo "  $0 --exec --cxx --cxxflags --ldflags -o plugin.so -shared plugin.cc --libs"
+		echo ""
+		echo "The above command can be abbreviated as:"
+		echo ""
+		echo "  $0 --build plugin.so plugin.cc"
+		echo ""
+		echo "Use --prefix to change the prefix for the special args from '--' to"
+		echo "something else. Example:"
+		echo ""
+		echo "  $0 --prefix @ bindir: @bindir"
+		echo ""
+		echo "The args --bindir and --datdir can be directly followed by a slash and"
+		echo "additional text. Example:"
+		echo ""
+		echo "  $0 --datdir/simlib.v"
+		echo ""
+	} >&$(( $1 + 1))
+	exit $1
+}
+
+if [ $# -eq 0 ]; then
+	help 1
+fi
+
+if [ "$1" = "--build" ]; then
+	modname="$2"; shift 2
+	set -- --exec --cxx --cxxflags --ldflags -o "$modname" -shared "$@" --libs
+fi
+
+prefix="--"
+get_prefix=false
+exec_mode=false
+declare -a tokens=()
+
+for opt; do
+	if $get_prefix; then
+		prefix="$opt"
+		get_prefix=false
+		continue
+	fi
+	case "$opt" in
+		"$prefix"cxx)
+			tokens=( "${tokens[@]}"  /usr/local/osxcross/target/bin/x86_64-apple-darwin23.5-clang++       ) ;;
+		"$prefix"cxxflags)
+			tokens=( "${tokens[@]}"  -Wall -Wextra -ggdb -I${release_topdir_abs}"/share/yosys/include" -MD -MP -D_YOSYS_ -fPIC -I${release_topdir_abs}/include -DYOSYS_VER=\"0.63+190\" -DYOSYS_MAJOR=0 -DYOSYS_MINOR=63 -DYOSYS_COMMIT=190 -std=c++17 -O3 -DYOSYS_ENABLE_READLINE -I/opt/local/include -DYOSYS_ENABLE_PLUGINS -DYOSYS_ENABLE_GLOB -DYOSYS_ENABLE_ZLIB -I/opt/local/include -DYOSYS_ENABLE_TCL -DYOSYS_ENABLE_THREADS -DYOSYS_ENABLE_ABC  ) ;;
+		"$prefix"linkflags)
+			tokens=( "${tokens[@]}"  -rdynamic -undefined dynamic_lookup   ) ;;
+		"$prefix"libs)
+			tokens=( "${tokens[@]}"  -lstdc++ -lm -lreadline -L/opt/local/lib -lffi -ldl -lz -L/opt/local/lib -ltcl8.6 -ltclstub8.6 -lpthread    ) ;;
+		"$prefix"ldflags)
+			tokens=( "${tokens[@]}"  -rdynamic -undefined dynamic_lookup   ) ;;
+		"$prefix"ldlibs)
+			tokens=( "${tokens[@]}"  -lstdc++ -lm -lreadline -L/opt/local/lib -lffi -ldl -lz -L/opt/local/lib -ltcl8.6 -ltclstub8.6 -lpthread    ) ;;
+		"$prefix"bindir)
+			tokens=( "${tokens[@]}" ${release_topdir_abs}'/bin'   ) ;;
+		"$prefix"datdir)
+			tokens=( "${tokens[@]}" ${release_topdir_abs}'/share/yosys'   ) ;;
+		"$prefix"bindir/*)
+			tokens=( "${tokens[@]}" ${release_topdir_abs}'/bin'"${opt#${prefix}bindir}" ) ;;
+		"$prefix"datdir/*)
+			tokens=( "${tokens[@]}" ${release_topdir_abs}'/share/yosys'"${opt#${prefix}datdir}" ) ;;
+		--help|-\?|-h)
+			if [ ${#tokens[@]} -eq 0 ]; then
+				help 0
+			else
+				tokens=( "${tokens[@]}" "$opt" )
+			fi ;;
+		--exec)
+			if [ ${#tokens[@]} -eq 0 ]; then
+				exec_mode=true
+			else
+				tokens=( "${tokens[@]}" "$opt" )
+			fi ;;
+		--prefix)
+			if [ ${#tokens[@]} -eq 0 ]; then
+				get_prefix=true
+			else
+				tokens=( "${tokens[@]}" "$opt" )
+			fi ;;
+		*)
+			tokens=( "${tokens[@]}" "$opt" )
+	esac
+done
+
+if $exec_mode; then
+	exec "${tokens[@]}"
+fi
+
+echo "${tokens[@]}"
+exit 0

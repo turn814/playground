@@ -1,0 +1,3 @@
+@/libgrt.a
+-L./
+-lz

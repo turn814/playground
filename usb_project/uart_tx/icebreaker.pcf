@@ -1,0 +1,4 @@
+set_io clk      35  # 12 MHz clock
+set_io led      25  # LED (red)
+set_io btn1     10  # user_button 1
+set_io uart_tx  9   # uart TXD
