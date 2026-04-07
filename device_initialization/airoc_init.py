@@ -90,6 +90,18 @@ def download_fw_829(com_port, fw_path):
 
     return
 
+def download_fw_829_hci(com_port, fw_path):
+    """
+    Downloads cgs onto 829 devices using BTSP
+
+    :param com_port: COM port of AIROC device
+    :param fw_path: Path to FW
+    """
+    run(["perl", r"C:\Users\irvinelabuser\Documents\playground\device_initialization\FW_download_829_hci.pl", com_port, "115200", fw_path], shell=True)
+
+    return
+
+
 def download_fw_atomic2(com_port, baud_rate, fw_path):
     """
     Downloads RFFW onto Atomic-2 devices

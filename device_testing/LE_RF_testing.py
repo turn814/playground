@@ -99,7 +99,7 @@ def LE_OP_test(DUT, cbt_ble, channels, output_file, cal_file=r"C:\Users\irvinela
 
     return
 
-def LE_modchar_test(DUT, cbt_ble, channels, output_file):
+def LE_ICFT_test(DUT, cbt_ble, channels, output_file):
     """Initiates and measures frequency accuracy of LE_Transmitter_Test on each specified channel
 
     Args:
