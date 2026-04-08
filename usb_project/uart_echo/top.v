@@ -1,7 +1,7 @@
 module top (
     input clk,
-    input btn1,
-    output reg uart_tx
+    output reg uart_tx,
+    input uart_rx
 );
 
 parameter STATE_IDLE    = 3'b000;
@@ -10,10 +10,20 @@ parameter STATE_DATA    = 3'b010;
 parameter STATE_STOP    = 3'b011;
 parameter STATE_WAIT    = 3'b100;
 
+parameter RX_IDLE       = 3'b000;
+parameter RX_START      = 3'b001;
+parameter RX_DATA       = 3'b010;
+parameter RX_STOP       = 3'b011;
+
 reg [2:0] current_state = STATE_IDLE;
 reg [7:0] baud_counter = 0;
 reg [4:0] bit_index = 0;
-reg [3:0] char_index = 0;
+
+reg [2:0] rx_state = RX_IDLE;
+reg [7:0] rx_baud_counter = 0;
+reg [4:0] rx_bit_index = 0;
+reg [7:0] rx_data_buffer = 0;
+reg       rx_ready = 0;
 
 reg [7:0] tx_data [0:4];
 initial begin
@@ -27,13 +37,59 @@ end
 initial uart_tx = 1'b1;
 
 always @(posedge clk) begin
+    case (rx_state)
+        RX_IDLE: begin
+            rx_ready <= 0;
+            rx_baud_counter <= 0;
+            rx_bit_index <= 0;
+            if (uart_rx == 0) begin
+                rx_state <= RX_START;
+            end
+        end
+
+        RX_START: begin
+            if (rx_baud_counter < 52) begin
+                rx_baud_counter <= rx_baud_counter + 1;
+            end else begin
+                rx_baud_counter <= 0;
+                rx_state <= RX_DATA;
+            end
+        end
+
+        RX_DATA: begin
+            if (rx_baud_counter < 104) begin
+                rx_baud_counter <= rx_baud_counter + 1;
+            end else begin
+                rx_baud_counter <= 0;
+                if (rx_bit_index < 8) begin
+                    rx_data_buffer[rx_bit_index] <= uart_rx;
+                    rx_bit_index <= rx_bit_index + 1;
+                end else begin
+                    rx_baud_counter <= 0;
+                    rx_bit_index <= 0;
+                    rx_state <= RX_STOP;
+                end
+            end
+        end
+
+        RX_STOP: begin
+            if (rx_baud_counter < 104) begin
+                rx_baud_counter <= rx_baud_counter + 1;
+            end else begin
+                rx_ready <= 1;
+                rx_state <= RX_IDLE;
+            end
+        end
+    endcase
+end
+
+always @(posedge clk) begin
     case (current_state)
         STATE_IDLE: begin
             uart_tx <= 1'b1;
             baud_counter <= 0;
             bit_index <= 0;
-            char_index <= 0;
-            if (btn1 == 1'b0) begin
+            if (rx_ready == 1) begin
                 current_state <= STATE_START;
             end
         end
@@ -51,7 +107,7 @@ always @(posedge clk) begin
         STATE_DATA: begin
             if (bit_index < 8) begin
                 if (baud_counter < 104) begin
-                    uart_tx <= tx_data[char_index][bit_index];
+                    uart_tx <= rx_data_buffer[bit_index];
                     baud_counter <= baud_counter + 1;
                 end else begin
                     bit_index <= bit_index + 1;
@@ -60,7 +116,6 @@ always @(posedge clk) begin
             end else begin
                 baud_counter <= 0;
                 bit_index <= 0;
-                char_index <= char_index + 1;
                 current_state <= STATE_STOP;
             end
         end
@@ -71,18 +126,13 @@ always @(posedge clk) begin
                 baud_counter <= baud_counter + 1;
             end else begin
                 baud_counter <= 0;
-                if (char_index < 5) begin
-                    current_state <= STATE_START;
-                end else begin
-                    char_index <= 0;
-                    current_state <= STATE_WAIT;
-                end
+                current_state <= STATE_WAIT;
             end
         end
 
         STATE_WAIT: begin
             uart_tx <= 1'b1;
-            if (btn1 == 1'b1) begin
+            if (rx_ready == 0) begin
                 current_state <= STATE_IDLE;
             end
         end

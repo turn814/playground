@@ -23,7 +23,7 @@
         }
       },
       "cells": {
-        "$specify$1543": {
+        "$specify$2480": {
           "hide_name": 1,
           "type": "$specify2",
           "parameters": {
@@ -338,7 +338,7 @@
     },
     "$paramod$__ABC9_DELAY\\DELAY=32'00000000000000000000000000010101": {
       "attributes": {
-        "abc9_box_id": "00000000000000000000000000000001",
+        "abc9_box_id": "00000000000000000000000000000010",
         "hdlname": "__ABC9_DELAY",
         "blackbox": "00000000000000000000000000000001",
         "abc9_box": "00000000000000000000000000000001",
@@ -359,7 +359,7 @@
         }
       },
       "cells": {
-        "$specify$1543": {
+        "$specify$2480": {
           "hide_name": 1,
           "type": "$specify2",
           "parameters": {
@@ -409,7 +409,7 @@
     },
     "$paramod$__ABC9_DELAY\\DELAY=32'00000000000000000000000011001011": {
       "attributes": {
-        "abc9_box_id": "00000000000000000000000000000010",
+        "abc9_box_id": "00000000000000000000000000000001",
         "hdlname": "__ABC9_DELAY",
         "blackbox": "00000000000000000000000000000001",
         "abc9_box": "00000000000000000000000000000001",
@@ -430,7 +430,7 @@
         }
       },
       "cells": {
-        "$specify$1543": {
+        "$specify$2480": {
           "hide_name": 1,
           "type": "$specify2",
           "parameters": {
@@ -2841,9 +2841,8 @@
     },
     "SB_DFFE": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
         "abc9_flop": "00000000000000000000000000000001",
-        "cells_not_processed": "00000000000000000000000000000001",
+        "blackbox": "00000000000000000000000000000001",
         "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_sim.v:303.1-347.10"
       },
       "ports": {
@@ -10134,9 +10133,13 @@
       "attributes": {
         "hdlname": "top",
         "top": "00000000000000000000000000000001",
-        "src": "top.v:1.1-92.10"
+        "src": "top.v:1.1-142.10"
       },
       "parameter_default_values": {
+        "RX_DATA": "010",
+        "RX_IDLE": "000",
+        "RX_START": "001",
+        "RX_STOP": "011",
         "STATE_DATA": "010",
         "STATE_IDLE": "000",
         "STATE_START": "001",
@@ -10148,12 +10151,12 @@
           "direction": "input",
           "bits": [ 2 ]
         },
-        "btn1": {
-          "direction": "input",
-          "bits": [ 3 ]
-        },
         "uart_tx": {
           "direction": "output",
+          "bits": [ 3 ]
+        },
+        "uart_rx": {
+          "direction": "input",
           "bits": [ 4 ]
         }
       },
@@ -10165,7 +10168,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10189,7 +10192,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10214,7 +10217,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
           },
           "port_directions": {
             "I0": "input",
@@ -10237,7 +10240,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
           },
           "port_directions": {
             "CI": "input",
@@ -10259,7 +10262,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10284,7 +10287,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
           },
           "port_directions": {
             "I0": "input",
@@ -10301,27 +10304,6 @@
             "O": [ 15 ]
           }
         },
-        "baud_counter_SB_DFFESR_Q_2_D_SB_LUT4_O_I3_SB_CARRY_CO": {
-          "hide_name": 0,
-          "type": "SB_CARRY",
-          "parameters": {
-          },
-          "attributes": {
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
-          },
-          "port_directions": {
-            "CI": "input",
-            "CO": "output",
-            "I0": "input",
-            "I1": "input"
-          },
-          "connections": {
-            "CI": [ 16 ],
-            "CO": [ 13 ],
-            "I0": [ "0" ],
-            "I1": [ 17 ]
-          }
-        },
         "baud_counter_SB_DFFESR_Q_3": {
           "hide_name": 0,
           "type": "SB_DFFESR",
@@ -10329,7 +10311,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10340,202 +10322,13 @@
           },
           "connections": {
             "C": [ 2 ],
-            "D": [ 18 ],
+            "D": [ 16 ],
             "E": [ 6 ],
-            "Q": [ 17 ],
+            "Q": [ 13 ],
             "R": [ 8 ]
           }
         },
         "baud_counter_SB_DFFESR_Q_3_D_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000101010100000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 11 ],
-            "I1": [ "0" ],
-            "I2": [ 17 ],
-            "I3": [ 16 ],
-            "O": [ 18 ]
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_3_D_SB_LUT4_O_I3_SB_CARRY_CO": {
-          "hide_name": 0,
-          "type": "SB_CARRY",
-          "parameters": {
-          },
-          "attributes": {
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
-          },
-          "port_directions": {
-            "CI": "input",
-            "CO": "output",
-            "I0": "input",
-            "I1": "input"
-          },
-          "connections": {
-            "CI": [ 19 ],
-            "CO": [ 16 ],
-            "I0": [ "0" ],
-            "I1": [ 20 ]
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_4": {
-          "hide_name": 0,
-          "type": "SB_DFFESR",
-          "parameters": {
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
-          },
-          "port_directions": {
-            "C": "input",
-            "D": "input",
-            "E": "input",
-            "Q": "output",
-            "R": "input"
-          },
-          "connections": {
-            "C": [ 2 ],
-            "D": [ 21 ],
-            "E": [ 6 ],
-            "Q": [ 20 ],
-            "R": [ 8 ]
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_4_D_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000101010100000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 11 ],
-            "I1": [ "0" ],
-            "I2": [ 20 ],
-            "I3": [ 19 ],
-            "O": [ 21 ]
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_4_D_SB_LUT4_O_I3_SB_CARRY_CO": {
-          "hide_name": 0,
-          "type": "SB_CARRY",
-          "parameters": {
-          },
-          "attributes": {
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
-          },
-          "port_directions": {
-            "CI": "input",
-            "CO": "output",
-            "I0": "input",
-            "I1": "input"
-          },
-          "connections": {
-            "CI": [ 22 ],
-            "CO": [ 19 ],
-            "I0": [ "0" ],
-            "I1": [ 23 ]
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_5": {
-          "hide_name": 0,
-          "type": "SB_DFFESR",
-          "parameters": {
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
-          },
-          "port_directions": {
-            "C": "input",
-            "D": "input",
-            "E": "input",
-            "Q": "output",
-            "R": "input"
-          },
-          "connections": {
-            "C": [ 2 ],
-            "D": [ 24 ],
-            "E": [ 6 ],
-            "Q": [ 23 ],
-            "R": [ 8 ]
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_5_D_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000101010100000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 11 ],
-            "I1": [ "0" ],
-            "I2": [ 23 ],
-            "I3": [ 22 ],
-            "O": [ 24 ]
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_6": {
-          "hide_name": 0,
-          "type": "SB_DFFESR",
-          "parameters": {
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
-          },
-          "port_directions": {
-            "C": "input",
-            "D": "input",
-            "E": "input",
-            "Q": "output",
-            "R": "input"
-          },
-          "connections": {
-            "C": [ 2 ],
-            "D": [ 25 ],
-            "E": [ 6 ],
-            "Q": [ 22 ],
-            "R": [ 8 ]
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_6_D_SB_LUT4_O": {
           "hide_name": 0,
           "type": "SB_LUT4",
           "parameters": {
@@ -10555,19 +10348,19 @@
           "connections": {
             "I0": [ "0" ],
             "I1": [ "0" ],
-            "I2": [ 22 ],
+            "I2": [ 13 ],
             "I3": [ 11 ],
-            "O": [ 25 ]
+            "O": [ 16 ]
           }
         },
-        "baud_counter_SB_DFFESR_Q_7": {
+        "baud_counter_SB_DFFESR_Q_4": {
           "hide_name": 0,
           "type": "SB_DFFESR",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10580,8 +10373,218 @@
             "C": [ 2 ],
             "D": [ "0" ],
             "E": [ 6 ],
-            "Q": [ 26 ],
+            "Q": [ 17 ],
             "R": [ 8 ]
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_5": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 18 ],
+            "E": [ 6 ],
+            "Q": [ 19 ],
+            "R": [ 8 ]
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_5_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000101010100000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 11 ],
+            "I1": [ "0" ],
+            "I2": [ 19 ],
+            "I3": [ 20 ],
+            "O": [ 18 ]
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_5_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 21 ],
+            "CO": [ 20 ],
+            "I0": [ "0" ],
+            "I1": [ 22 ]
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_6": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 23 ],
+            "E": [ 6 ],
+            "Q": [ 22 ],
+            "R": [ 8 ]
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_6_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000101010100000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 11 ],
+            "I1": [ "0" ],
+            "I2": [ 22 ],
+            "I3": [ 21 ],
+            "O": [ 23 ]
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_6_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 24 ],
+            "CO": [ 21 ],
+            "I0": [ "0" ],
+            "I1": [ 25 ]
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_7": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 26 ],
+            "E": [ 6 ],
+            "Q": [ 25 ],
+            "R": [ 8 ]
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_7_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000101010100000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 11 ],
+            "I1": [ "0" ],
+            "I2": [ 25 ],
+            "I3": [ 24 ],
+            "O": [ 26 ]
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_7_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 27 ],
+            "CO": [ 24 ],
+            "I0": [ "0" ],
+            "I1": [ 7 ]
           }
         },
         "baud_counter_SB_DFFESR_Q_D_SB_LUT4_O": {
@@ -10592,7 +10595,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
           },
           "port_directions": {
             "I0": "input",
@@ -10615,7 +10618,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
           },
           "port_directions": {
             "CI": "input",
@@ -10687,7 +10690,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10711,7 +10714,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10736,7 +10739,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
           },
           "port_directions": {
             "I0": "input",
@@ -10759,7 +10762,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
           },
           "port_directions": {
             "CI": "input",
@@ -10781,7 +10784,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10806,7 +10809,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
           },
           "port_directions": {
             "I0": "input",
@@ -10829,7 +10832,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
           },
           "port_directions": {
             "CI": "input",
@@ -10851,7 +10854,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10876,7 +10879,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
           },
           "port_directions": {
             "I0": "input",
@@ -10900,7 +10903,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -10950,7 +10953,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
           },
           "port_directions": {
             "I0": "input",
@@ -10973,7 +10976,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
           },
           "port_directions": {
             "CI": "input",
@@ -10988,36 +10991,11 @@
             "I1": [ 36 ]
           }
         },
-        "bit_index_SB_DFFESR_Q_E_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "1111111100000001"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 28 ],
-            "I1": [ 29 ],
-            "I2": [ 30 ],
-            "I3": [ 46 ],
-            "O": [ 32 ]
-          }
-        },
         "bit_index_SB_DFFESR_Q_R_SB_LUT4_O": {
           "hide_name": 0,
           "type": "SB_LUT4",
           "parameters": {
-            "LUT_INIT": "1111111111111100"
+            "LUT_INIT": "1111110011111111"
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
@@ -11034,252 +11012,18 @@
             "I0": [ "0" ],
             "I1": [ 33 ],
             "I2": [ 36 ],
-            "I3": [ 47 ],
+            "I3": [ 46 ],
             "O": [ 34 ]
           }
         },
-        "btn1_SB_LUT4_I0": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "1100110011000110"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 3 ],
-            "I1": [ 28 ],
-            "I2": [ 29 ],
-            "I3": [ 30 ],
-            "O": [ 48 ]
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_I3": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "1111000000000000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ "0" ],
-            "I2": [ 49 ],
-            "I3": [ 50 ],
-            "O": [ 51 ]
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_I3_I2_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000010101000101"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 28 ],
-            "I1": [ 29 ],
-            "I2": [ 30 ],
-            "I3": [ 52 ],
-            "O": [ 49 ]
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000111100000000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ "0" ],
-            "I2": [ 53 ],
-            "I3": [ 34 ],
-            "O": [ 50 ]
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000000011110000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ "0" ],
-            "I2": [ 30 ],
-            "I3": [ 54 ],
-            "O": [ 53 ]
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO": {
-          "hide_name": 0,
-          "type": "SB_CARRY",
-          "parameters": {
-          },
-          "attributes": {
-            "src": "top.v:70.17-70.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
-          },
-          "port_directions": {
-            "CI": "input",
-            "CO": "output",
-            "I0": "input",
-            "I1": "input"
-          },
-          "connections": {
-            "CI": [ 55 ],
-            "CO": [ 54 ],
-            "I0": [ 26 ],
-            "I1": [ "1" ]
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO": {
-          "hide_name": 0,
-          "type": "SB_CARRY",
-          "parameters": {
-          },
-          "attributes": {
-            "src": "top.v:70.17-70.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
-          },
-          "port_directions": {
-            "CI": "input",
-            "CO": "output",
-            "I0": "input",
-            "I1": "input"
-          },
-          "connections": {
-            "CI": [ 56 ],
-            "CO": [ 55 ],
-            "I0": [ 7 ],
-            "I1": [ "0" ]
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO": {
-          "hide_name": 0,
-          "type": "SB_CARRY",
-          "parameters": {
-          },
-          "attributes": {
-            "src": "top.v:70.17-70.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
-          },
-          "port_directions": {
-            "CI": "input",
-            "CO": "output",
-            "I0": "input",
-            "I1": "input"
-          },
-          "connections": {
-            "CI": [ 57 ],
-            "CO": [ 56 ],
-            "I0": [ 10 ],
-            "I1": [ "0" ]
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO": {
-          "hide_name": 0,
-          "type": "SB_CARRY",
-          "parameters": {
-          },
-          "attributes": {
-            "src": "top.v:70.17-70.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
-          },
-          "port_directions": {
-            "CI": "input",
-            "CO": "output",
-            "I0": "input",
-            "I1": "input"
-          },
-          "connections": {
-            "CI": [ 17 ],
-            "CO": [ 57 ],
-            "I0": [ 14 ],
-            "I1": [ "1" ]
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_I2": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000010000001111"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 28 ],
-            "I1": [ 30 ],
-            "I2": [ 54 ],
-            "I3": [ 34 ],
-            "O": [ 11 ]
-          }
-        },
-        "char_index_SB_DFFESR_Q": {
+        "current_state_SB_DFFESR_Q": {
           "hide_name": 0,
           "type": "SB_DFFESR",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -11290,20 +11034,20 @@
           },
           "connections": {
             "C": [ 2 ],
-            "D": [ 58 ],
-            "E": [ 51 ],
-            "Q": [ 59 ],
-            "R": [ 47 ]
+            "D": [ 47 ],
+            "E": [ 48 ],
+            "Q": [ 29 ],
+            "R": [ 49 ]
           }
         },
-        "char_index_SB_DFFESR_Q_1": {
+        "current_state_SB_DFFESR_Q_1": {
           "hide_name": 0,
           "type": "SB_DFFESR",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -11314,207 +11058,17 @@
           },
           "connections": {
             "C": [ 2 ],
-            "D": [ 60 ],
-            "E": [ 51 ],
-            "Q": [ 61 ],
-            "R": [ 47 ]
+            "D": [ 50 ],
+            "E": [ 48 ],
+            "Q": [ 28 ],
+            "R": [ 49 ]
           }
         },
-        "char_index_SB_DFFESR_Q_1_D_SB_LUT4_O": {
+        "current_state_SB_DFFESR_Q_1_D_SB_LUT4_O": {
           "hide_name": 0,
           "type": "SB_LUT4",
           "parameters": {
-            "LUT_INIT": "0110100110010110"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:63.31-63.45|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ "0" ],
-            "I2": [ 61 ],
-            "I3": [ 62 ],
-            "O": [ 60 ]
-          }
-        },
-        "char_index_SB_DFFESR_Q_1_D_SB_LUT4_O_I3_SB_CARRY_CO": {
-          "hide_name": 0,
-          "type": "SB_CARRY",
-          "parameters": {
-          },
-          "attributes": {
-            "src": "top.v:63.31-63.45|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
-          },
-          "port_directions": {
-            "CI": "input",
-            "CO": "output",
-            "I0": "input",
-            "I1": "input"
-          },
-          "connections": {
-            "CI": [ 63 ],
-            "CO": [ 62 ],
-            "I0": [ "0" ],
-            "I1": [ 64 ]
-          }
-        },
-        "char_index_SB_DFFESR_Q_2": {
-          "hide_name": 0,
-          "type": "SB_DFFESR",
-          "parameters": {
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
-          },
-          "port_directions": {
-            "C": "input",
-            "D": "input",
-            "E": "input",
-            "Q": "output",
-            "R": "input"
-          },
-          "connections": {
-            "C": [ 2 ],
-            "D": [ 65 ],
-            "E": [ 51 ],
-            "Q": [ 64 ],
-            "R": [ 47 ]
-          }
-        },
-        "char_index_SB_DFFESR_Q_2_D_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0110100110010110"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:63.31-63.45|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ "0" ],
-            "I2": [ 64 ],
-            "I3": [ 63 ],
-            "O": [ 65 ]
-          }
-        },
-        "char_index_SB_DFFESR_Q_3": {
-          "hide_name": 0,
-          "type": "SB_DFFESR",
-          "parameters": {
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
-          },
-          "port_directions": {
-            "C": "input",
-            "D": "input",
-            "E": "input",
-            "Q": "output",
-            "R": "input"
-          },
-          "connections": {
-            "C": [ 2 ],
-            "D": [ 66 ],
-            "E": [ 51 ],
-            "Q": [ 63 ],
-            "R": [ 47 ]
-          }
-        },
-        "char_index_SB_DFFESR_Q_3_D_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000000011111111"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:12.34-13.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ "0" ],
-            "I2": [ "0" ],
-            "I3": [ 63 ],
-            "O": [ 66 ]
-          }
-        },
-        "char_index_SB_DFFESR_Q_D_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0110100110010110"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:63.31-63.45|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ "0" ],
-            "I2": [ 59 ],
-            "I3": [ 67 ],
-            "O": [ 58 ]
-          }
-        },
-        "char_index_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO": {
-          "hide_name": 0,
-          "type": "SB_CARRY",
-          "parameters": {
-          },
-          "attributes": {
-            "src": "top.v:63.31-63.45|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
-          },
-          "port_directions": {
-            "CI": "input",
-            "CO": "output",
-            "I0": "input",
-            "I1": "input"
-          },
-          "connections": {
-            "CI": [ 62 ],
-            "CO": [ 67 ],
-            "I0": [ "0" ],
-            "I1": [ 61 ]
-          }
-        },
-        "char_index_SB_DFFESR_Q_R_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "1111111111001111"
+            "LUT_INIT": "0011000000000000"
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
@@ -11532,80 +11086,7 @@
             "I1": [ 28 ],
             "I2": [ 29 ],
             "I3": [ 30 ],
-            "O": [ 47 ]
-          }
-        },
-        "current_state_SB_DFFESR_Q": {
-          "hide_name": 0,
-          "type": "SB_DFFESR",
-          "parameters": {
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
-          },
-          "port_directions": {
-            "C": "input",
-            "D": "input",
-            "E": "input",
-            "Q": "output",
-            "R": "input"
-          },
-          "connections": {
-            "C": [ 2 ],
-            "D": [ 68 ],
-            "E": [ 69 ],
-            "Q": [ 29 ],
-            "R": [ 70 ]
-          }
-        },
-        "current_state_SB_DFFESR_Q_1": {
-          "hide_name": 0,
-          "type": "SB_DFFESR",
-          "parameters": {
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
-          },
-          "port_directions": {
-            "C": "input",
-            "D": "input",
-            "E": "input",
-            "Q": "output",
-            "R": "input"
-          },
-          "connections": {
-            "C": [ 2 ],
-            "D": [ 71 ],
-            "E": [ 69 ],
-            "Q": [ 28 ],
-            "R": [ 70 ]
-          }
-        },
-        "current_state_SB_DFFESR_Q_1_D_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000000001000000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 28 ],
-            "I1": [ 29 ],
-            "I2": [ 30 ],
-            "I3": [ 52 ],
-            "O": [ 71 ]
+            "O": [ 50 ]
           }
         },
         "current_state_SB_DFFESR_Q_D_SB_LUT4_O": {
@@ -11630,7 +11111,7 @@
             "I1": [ 28 ],
             "I2": [ 29 ],
             "I3": [ 30 ],
-            "O": [ 68 ]
+            "O": [ 47 ]
           }
         },
         "current_state_SB_DFFESS_Q": {
@@ -11640,7 +11121,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:25.66-25.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:25.66-25.119"
           },
           "port_directions": {
             "C": "input",
@@ -11651,71 +11132,21 @@
           },
           "connections": {
             "C": [ 2 ],
-            "D": [ 72 ],
-            "E": [ 69 ],
+            "D": [ 46 ],
+            "E": [ 48 ],
             "Q": [ 30 ],
-            "S": [ 70 ]
+            "S": [ 49 ]
           }
         },
         "current_state_SB_DFFESS_Q_D_SB_LUT4_O": {
           "hide_name": 0,
           "type": "SB_LUT4",
           "parameters": {
-            "LUT_INIT": "0100010000000100"
+            "LUT_INIT": "0000000000110000"
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 28 ],
-            "I1": [ 29 ],
-            "I2": [ 30 ],
-            "I3": [ 52 ],
-            "O": [ 72 ]
-          }
-        },
-        "current_state_SB_DFFESS_Q_D_SB_LUT4_O_I3_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0001000100010101"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 59 ],
-            "I1": [ 61 ],
-            "I2": [ 64 ],
-            "I3": [ 63 ],
-            "O": [ 52 ]
-          }
-        },
-        "current_state_SB_DFFESS_Q_E_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000111100000000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
           },
           "port_directions": {
             "I0": "input",
@@ -11726,10 +11157,10 @@
           },
           "connections": {
             "I0": [ "0" ],
-            "I1": [ "0" ],
-            "I2": [ 48 ],
-            "I3": [ 50 ],
-            "O": [ 69 ]
+            "I1": [ 28 ],
+            "I2": [ 29 ],
+            "I3": [ 30 ],
+            "O": [ 46 ]
           }
         },
         "current_state_SB_DFFESS_Q_S_SB_LUT4_O": {
@@ -11754,7 +11185,2365 @@
             "I1": [ 28 ],
             "I2": [ 29 ],
             "I3": [ 30 ],
-            "O": [ 70 ]
+            "O": [ 49 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 51 ],
+            "E": [ 52 ],
+            "Q": [ 53 ],
+            "R": [ 54 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_1": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 55 ],
+            "E": [ 52 ],
+            "Q": [ 56 ],
+            "R": [ 54 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_1_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000001111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 56 ],
+            "I3": [ 57 ],
+            "O": [ 55 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_1_D_SB_LUT4_O_I3_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000111100000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 58 ],
+            "I3": [ 59 ],
+            "O": [ 57 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_2": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 60 ],
+            "E": [ 52 ],
+            "Q": [ 61 ],
+            "R": [ 54 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_2_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1000101000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 62 ],
+            "I1": [ 63 ],
+            "I2": [ 64 ],
+            "I3": [ 65 ],
+            "O": [ 60 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_2_D_SB_LUT4_O_I3_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 61 ],
+            "I3": [ 66 ],
+            "O": [ 65 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_3": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 67 ],
+            "E": [ 52 ],
+            "Q": [ 68 ],
+            "R": [ 54 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_3_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000010101010000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 57 ],
+            "I1": [ "0" ],
+            "I2": [ 68 ],
+            "I3": [ 69 ],
+            "O": [ 67 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_3_D_SB_LUT4_O_I3_SB_CARRY_CI": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 69 ],
+            "CO": [ 66 ],
+            "I0": [ "0" ],
+            "I1": [ 68 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_3_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 70 ],
+            "CO": [ 69 ],
+            "I0": [ "0" ],
+            "I1": [ 71 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_4": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 72 ],
+            "E": [ 52 ],
+            "Q": [ 71 ],
+            "R": [ 54 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_4_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000010101010000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 57 ],
+            "I1": [ "0" ],
+            "I2": [ 71 ],
+            "I3": [ 70 ],
+            "O": [ 72 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_4_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 73 ],
+            "CO": [ 70 ],
+            "I0": [ "0" ],
+            "I1": [ 74 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_5": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 75 ],
+            "E": [ 52 ],
+            "Q": [ 74 ],
+            "R": [ 54 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_5_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000010101010000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 57 ],
+            "I1": [ "0" ],
+            "I2": [ 74 ],
+            "I3": [ 73 ],
+            "O": [ 75 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_5_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 76 ],
+            "CO": [ 73 ],
+            "I0": [ "0" ],
+            "I1": [ 77 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_6": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 78 ],
+            "E": [ 52 ],
+            "Q": [ 77 ],
+            "R": [ 54 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_6_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000010101010000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 57 ],
+            "I1": [ "0" ],
+            "I2": [ 77 ],
+            "I3": [ 76 ],
+            "O": [ 78 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_6_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 56 ],
+            "CO": [ 76 ],
+            "I0": [ "0" ],
+            "I1": [ 79 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_7": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 80 ],
+            "E": [ 52 ],
+            "Q": [ 79 ],
+            "R": [ 54 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_7_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000010101010000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 57 ],
+            "I1": [ "0" ],
+            "I2": [ 79 ],
+            "I3": [ 56 ],
+            "O": [ 80 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000101010100000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 58 ],
+            "I1": [ "0" ],
+            "I2": [ 53 ],
+            "I3": [ 81 ],
+            "O": [ 51 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 66 ],
+            "CO": [ 81 ],
+            "I0": [ "0" ],
+            "I1": [ 61 ]
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_E_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000111111111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 58 ],
+            "I3": [ 64 ],
+            "O": [ 52 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 82 ],
+            "E": [ 83 ],
+            "Q": [ 84 ],
+            "R": [ 85 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_1": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 86 ],
+            "E": [ 83 ],
+            "Q": [ 87 ],
+            "R": [ 85 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_1_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:66.37-66.53|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 87 ],
+            "I3": [ 88 ],
+            "O": [ 86 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_1_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:66.37-66.53|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 89 ],
+            "CO": [ 88 ],
+            "I0": [ "0" ],
+            "I1": [ 90 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_2": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 91 ],
+            "E": [ 83 ],
+            "Q": [ 90 ],
+            "R": [ 85 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_2_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:66.37-66.53|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 90 ],
+            "I3": [ 89 ],
+            "O": [ 91 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_2_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:66.37-66.53|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 92 ],
+            "CO": [ 89 ],
+            "I0": [ "0" ],
+            "I1": [ 93 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_3": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 94 ],
+            "E": [ 83 ],
+            "Q": [ 93 ],
+            "R": [ 85 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 95 ],
+            "E": [ 83 ],
+            "Q": [ 92 ],
+            "R": [ 85 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 95 ],
+            "CO": [ 96 ],
+            "I0": [ "0" ],
+            "I1": [ 97 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_CARRY_CI": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 96 ],
+            "CO": [ 98 ],
+            "I0": [ "0" ],
+            "I1": [ 99 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 98 ],
+            "CO": [ 100 ],
+            "I0": [ "0" ],
+            "I1": [ 101 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1010101001010101"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 84 ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 100 ],
+            "O": [ 102 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_LUT4_I3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 99 ],
+            "I3": [ 96 ],
+            "O": [ 103 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_LUT4_I3_I2_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 90 ],
+            "O": [ 99 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 103 ],
+            "I3": [ 104 ],
+            "O": [ 105 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I3_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000111100000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 103 ],
+            "I3": [ 104 ],
+            "O": [ 106 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 101 ],
+            "I3": [ 98 ],
+            "O": [ 104 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_I2_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 87 ],
+            "O": [ 101 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_LUT4_I3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 97 ],
+            "I3": [ 95 ],
+            "O": [ 94 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_LUT4_I3_I2_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 93 ],
+            "O": [ 97 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_LUT4_I3_O_SB_LUT4_I2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0011000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 92 ],
+            "I2": [ 94 ],
+            "I3": [ 102 ],
+            "O": [ 107 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 92 ],
+            "O": [ 95 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:66.37-66.53|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 84 ],
+            "I3": [ 108 ],
+            "O": [ 82 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:66.37-66.53|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 88 ],
+            "CO": [ 108 ],
+            "I0": [ "0" ],
+            "I1": [ 87 ]
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_E_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000111100000011"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 62 ],
+            "I2": [ 63 ],
+            "I3": [ 64 ],
+            "O": [ 83 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 109 ],
+            "E": [ 110 ],
+            "Q": [ 111 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_1": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 112 ],
+            "E": [ 110 ],
+            "Q": [ 113 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_1_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1010110011001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 4 ],
+            "I1": [ 113 ],
+            "I2": [ 106 ],
+            "I3": [ 107 ],
+            "O": [ 112 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_2": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 114 ],
+            "E": [ 110 ],
+            "Q": [ 115 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_2_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1010110011001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 4 ],
+            "I1": [ 115 ],
+            "I2": [ 106 ],
+            "I3": [ 116 ],
+            "O": [ 114 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_3": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 117 ],
+            "E": [ 110 ],
+            "Q": [ 118 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_3_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1100101011001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 4 ],
+            "I1": [ 118 ],
+            "I2": [ 94 ],
+            "I3": [ 119 ],
+            "O": [ 117 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_3_D_SB_LUT4_O_I3_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0011000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 92 ],
+            "I2": [ 102 ],
+            "I3": [ 105 ],
+            "O": [ 119 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_4": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 120 ],
+            "E": [ 110 ],
+            "Q": [ 121 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_4_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1010110011001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 4 ],
+            "I1": [ 121 ],
+            "I2": [ 105 ],
+            "I3": [ 122 ],
+            "O": [ 120 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_5": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 123 ],
+            "E": [ 110 ],
+            "Q": [ 124 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_5_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1010110011001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 4 ],
+            "I1": [ 124 ],
+            "I2": [ 105 ],
+            "I3": [ 107 ],
+            "O": [ 123 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_6": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 125 ],
+            "E": [ 110 ],
+            "Q": [ 126 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_6_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1010110011001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 4 ],
+            "I1": [ 126 ],
+            "I2": [ 105 ],
+            "I3": [ 116 ],
+            "O": [ 125 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_6_D_SB_LUT4_O_I3_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1100000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 92 ],
+            "I2": [ 94 ],
+            "I3": [ 102 ],
+            "O": [ 116 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_7": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 127 ],
+            "E": [ 110 ],
+            "Q": [ 128 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_7_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111000011100100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 84 ],
+            "I1": [ 4 ],
+            "I2": [ 128 ],
+            "I3": [ 102 ],
+            "O": [ 127 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1010110011001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 4 ],
+            "I1": [ 111 ],
+            "I2": [ 106 ],
+            "I3": [ 122 ],
+            "O": [ 109 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_D_SB_LUT4_O_I3_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000110000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 92 ],
+            "I2": [ 94 ],
+            "I3": [ 102 ],
+            "O": [ 122 ]
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_E_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011110000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 64 ],
+            "I3": [ 85 ],
+            "O": [ 110 ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFE",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:5.57-5.103"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 58 ],
+            "E": [ 129 ],
+            "Q": [ 130 ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 62 ],
+            "I3": [ 63 ],
+            "O": [ 58 ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111010110110001"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 62 ],
+            "I1": [ 63 ],
+            "I2": [ 64 ],
+            "I3": [ 131 ],
+            "O": [ 59 ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 132 ],
+            "CO": [ 131 ],
+            "I0": [ 53 ],
+            "I1": [ "1" ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 133 ],
+            "CO": [ 132 ],
+            "I0": [ 61 ],
+            "I1": [ "1" ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 134 ],
+            "CO": [ 133 ],
+            "I0": [ 68 ],
+            "I1": [ "0" ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 135 ],
+            "CO": [ 134 ],
+            "I0": [ 71 ],
+            "I1": [ "0" ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 77 ],
+            "CO": [ 135 ],
+            "I0": [ 74 ],
+            "I1": [ "1" ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1100001100000011"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 62 ],
+            "I2": [ 63 ],
+            "I3": [ 64 ],
+            "O": [ 129 ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:76.17-76.38|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 136 ],
+            "CO": [ 64 ],
+            "I0": [ 53 ],
+            "I1": [ "1" ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:76.17-76.38|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 137 ],
+            "CO": [ 136 ],
+            "I0": [ 61 ],
+            "I1": [ "0" ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:76.17-76.38|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 138 ],
+            "CO": [ 137 ],
+            "I0": [ 68 ],
+            "I1": [ "0" ]
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:76.17-76.38|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 74 ],
+            "CO": [ 138 ],
+            "I0": [ 71 ],
+            "I1": [ "1" ]
+          }
+        },
+        "rx_ready_SB_LUT4_I2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000000011"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 29 ],
+            "I2": [ 130 ],
+            "I3": [ 30 ],
+            "O": [ 139 ]
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_I3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1100001100000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 28 ],
+            "I2": [ 139 ],
+            "I3": [ 140 ],
+            "O": [ 48 ]
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111001100000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 30 ],
+            "I2": [ 141 ],
+            "I3": [ 34 ],
+            "O": [ 140 ]
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:125.17-125.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 142 ],
+            "CO": [ 141 ],
+            "I0": [ 17 ],
+            "I1": [ "1" ]
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:125.17-125.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 143 ],
+            "CO": [ 142 ],
+            "I0": [ 19 ],
+            "I1": [ "0" ]
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:125.17-125.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 144 ],
+            "CO": [ 143 ],
+            "I0": [ 22 ],
+            "I1": [ "0" ]
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top.v:125.17-125.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 7 ],
+            "CO": [ 144 ],
+            "I0": [ 25 ],
+            "I1": [ "1" ]
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_LUT4_I2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000010000001111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 28 ],
+            "I1": [ 30 ],
+            "I2": [ 141 ],
+            "I3": [ 34 ],
+            "O": [ 11 ]
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_LUT4_I2_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111111000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 33 ],
+            "I1": [ 36 ],
+            "I2": [ 141 ],
+            "I3": [ 46 ],
+            "O": [ 145 ]
+          }
+        },
+        "rx_state_SB_DFFESR_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 146 ],
+            "E": [ 147 ],
+            "Q": [ 62 ],
+            "R": [ 54 ]
+          }
+        },
+        "rx_state_SB_DFFESR_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000111111110000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 62 ],
+            "I3": [ 63 ],
+            "O": [ 146 ]
+          }
+        },
+        "rx_state_SB_DFFESR_Q_E_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0111000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 4 ],
+            "I1": [ 54 ],
+            "I2": [ 85 ],
+            "I3": [ 59 ],
+            "O": [ 147 ]
+          }
+        },
+        "rx_state_SB_DFFESS_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFESS",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top.v:39.1-84.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:25.66-25.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "S": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 148 ],
+            "E": [ 147 ],
+            "Q": [ 63 ],
+            "S": [ 54 ]
+          }
+        },
+        "rx_state_SB_DFFESS_Q_D_SB_LUT4_I3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111110011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 84 ],
+            "I2": [ 87 ],
+            "I3": [ 148 ],
+            "O": [ 85 ]
+          }
+        },
+        "rx_state_SB_DFFESS_Q_D_SB_LUT4_I3_O_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000001111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 62 ],
+            "I3": [ 63 ],
+            "O": [ 54 ]
+          }
+        },
+        "rx_state_SB_DFFESS_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011110000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 62 ],
+            "I3": [ 63 ],
+            "O": [ 148 ]
           }
         },
         "uart_tx_SB_LUT4_O": {
@@ -11778,8 +13567,8 @@
             "I0": [ "0" ],
             "I1": [ "0" ],
             "I2": [ "0" ],
-            "I3": [ 73 ],
-            "O": [ 4 ]
+            "I3": [ 149 ],
+            "O": [ 3 ]
           }
         },
         "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q": {
@@ -11789,7 +13578,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top.v:29.1-90.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:25.66-25.119"
+            "src": "top.v:86.1-140.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/ff_map.v:25.66-25.119"
           },
           "port_directions": {
             "C": "input",
@@ -11800,17 +13589,42 @@
           },
           "connections": {
             "C": [ 2 ],
-            "D": [ 74 ],
-            "E": [ 75 ],
-            "Q": [ 73 ],
-            "S": [ 76 ]
+            "D": [ 150 ],
+            "E": [ 151 ],
+            "Q": [ 149 ],
+            "S": [ 152 ]
           }
         },
         "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O": {
           "hide_name": 0,
           "type": "SB_LUT4",
           "parameters": {
-            "LUT_INIT": "1111111011001100"
+            "LUT_INIT": "0000000010111100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 28 ],
+            "I1": [ 29 ],
+            "I2": [ 30 ],
+            "I3": [ 153 ],
+            "O": [ 150 ]
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O_I3_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111111000000000"
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
@@ -11825,10 +13639,135 @@
           },
           "connections": {
             "I0": [ 39 ],
-            "I1": [ 76 ],
-            "I2": [ 77 ],
-            "I3": [ 78 ],
-            "O": [ 74 ]
+            "I1": [ 154 ],
+            "I2": [ 155 ],
+            "I3": [ 156 ],
+            "O": [ 153 ]
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0100010101000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 42 ],
+            "I1": [ 126 ],
+            "I2": [ 41 ],
+            "I3": [ 128 ],
+            "O": [ 155 ]
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1100110011000100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 39 ],
+            "I1": [ 46 ],
+            "I2": [ 157 ],
+            "I3": [ 158 ],
+            "O": [ 156 ]
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O_1_I3_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000101000001100"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 115 ],
+            "I1": [ 118 ],
+            "I2": [ 42 ],
+            "I3": [ 41 ],
+            "O": [ 158 ]
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O_1_I3_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1010000011000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 111 ],
+            "I1": [ 113 ],
+            "I2": [ 42 ],
+            "I3": [ 41 ],
+            "O": [ 157 ]
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1010000011000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 121 ],
+            "I1": [ 124 ],
+            "I2": [ 42 ],
+            "I3": [ 41 ],
+            "O": [ 154 ]
           }
         },
         "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_E_SB_LUT4_O": {
@@ -11852,15 +13791,15 @@
             "I0": [ 28 ],
             "I1": [ 29 ],
             "I2": [ 30 ],
-            "I3": [ 46 ],
-            "O": [ 75 ]
+            "I3": [ 145 ],
+            "O": [ 151 ]
           }
         },
-        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_E_SB_LUT4_O_I3_SB_LUT4_O": {
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_E_SB_LUT4_O_I3_SB_LUT4_I3": {
           "hide_name": 0,
           "type": "SB_LUT4",
           "parameters": {
-            "LUT_INIT": "0000000011111110"
+            "LUT_INIT": "1111111100000001"
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
@@ -11874,11 +13813,11 @@
             "O": "output"
           },
           "connections": {
-            "I0": [ 33 ],
-            "I1": [ 36 ],
-            "I2": [ 54 ],
-            "I3": [ 47 ],
-            "O": [ 46 ]
+            "I0": [ 28 ],
+            "I1": [ 29 ],
+            "I2": [ 30 ],
+            "I3": [ 145 ],
+            "O": [ 32 ]
           }
         },
         "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S_SB_LUT4_O": {
@@ -11903,141 +13842,16 @@
             "I1": [ 28 ],
             "I2": [ 29 ],
             "I3": [ 30 ],
-            "O": [ 76 ]
-          }
-        },
-        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S_SB_LUT4_O_1": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000000000001100"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ 29 ],
-            "I2": [ 30 ],
-            "I3": [ 79 ],
-            "O": [ 78 ]
-          }
-        },
-        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S_SB_LUT4_O_1_I3_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000000000001100"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ 42 ],
-            "I2": [ 41 ],
-            "I3": [ 80 ],
-            "O": [ 79 ]
-          }
-        },
-        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S_SB_LUT4_O_1_I3_SB_LUT4_O_I3_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000000000000011"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:22.34-23.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ 39 ],
-            "I2": [ 64 ],
-            "I3": [ 63 ],
-            "O": [ 80 ]
-          }
-        },
-        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S_SB_LUT4_O_2": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0101010000010101"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 61 ],
-            "I1": [ 42 ],
-            "I2": [ 41 ],
-            "I3": [ 81 ],
-            "O": [ 77 ]
-          }
-        },
-        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S_SB_LUT4_O_2_I3_SB_LUT4_O": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "0000111100000000"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:17.34-18.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ "0" ],
-            "I1": [ "0" ],
-            "I2": [ 64 ],
-            "I3": [ 63 ],
-            "O": [ 81 ]
+            "O": [ 152 ]
           }
         }
       },
       "netnames": {
         "baud_counter": {
           "hide_name": 0,
-          "bits": [ 22, 23, 20, 17, 14, 10, 7, 26 ],
+          "bits": [ 13, 14, 10, 7, 25, 22, 19, 17 ],
           "attributes": {
-            "src": "top.v:14.11-14.23"
+            "src": "top.v:19.11-19.23"
           }
         },
         "baud_counter_SB_DFFESR_Q_1_D": {
@@ -12051,7 +13865,7 @@
           "bits": [ 12 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "baud_counter_SB_DFFESR_Q_2_D": {
@@ -12060,52 +13874,52 @@
           "attributes": {
           }
         },
-        "baud_counter_SB_DFFESR_Q_2_D_SB_LUT4_O_I3": {
+        "baud_counter_SB_DFFESR_Q_3_D": {
           "hide_name": 0,
-          "bits": [ 13 ],
+          "bits": [ 16 ],
           "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
-        "baud_counter_SB_DFFESR_Q_3_D": {
+        "baud_counter_SB_DFFESR_Q_5_D": {
           "hide_name": 0,
           "bits": [ 18 ],
           "attributes": {
           }
         },
-        "baud_counter_SB_DFFESR_Q_3_D_SB_LUT4_O_I3": {
+        "baud_counter_SB_DFFESR_Q_5_D_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 16 ],
+          "bits": [ 20 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_4_D": {
-          "hide_name": 0,
-          "bits": [ 21 ],
-          "attributes": {
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_4_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 19 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "baud_counter_SB_DFFESR_Q_5_D": {
-          "hide_name": 0,
-          "bits": [ 24 ],
-          "attributes": {
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "baud_counter_SB_DFFESR_Q_6_D": {
           "hide_name": 0,
-          "bits": [ 25 ],
+          "bits": [ 23 ],
           "attributes": {
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_6_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_7_D": {
+          "hide_name": 0,
+          "bits": [ 26 ],
+          "attributes": {
+          }
+        },
+        "baud_counter_SB_DFFESR_Q_7_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 24 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "baud_counter_SB_DFFESR_Q_D": {
@@ -12119,7 +13933,7 @@
           "bits": [ 27 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "baud_counter_SB_DFFESR_Q_E": {
@@ -12138,7 +13952,7 @@
           "hide_name": 0,
           "bits": [ 41, 42, 39, 36, 33 ],
           "attributes": {
-            "src": "top.v:15.11-15.20"
+            "src": "top.v:20.11-20.20"
           }
         },
         "bit_index_SB_DFFESR_Q_1_D": {
@@ -12152,7 +13966,7 @@
           "bits": [ 37 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "bit_index_SB_DFFESR_Q_2_D": {
@@ -12166,7 +13980,7 @@
           "bits": [ 38 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "bit_index_SB_DFFESR_Q_3_D": {
@@ -12192,150 +14006,12 @@
           "bits": [ 45 ],
           "attributes": {
             "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:57.34-57.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "bit_index_SB_DFFESR_Q_E": {
-          "hide_name": 0,
-          "bits": [ 32 ],
-          "attributes": {
+            "src": "top.v:113.34-113.47|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
           }
         },
         "bit_index_SB_DFFESR_Q_R": {
           "hide_name": 0,
-          "bits": [ 28, 30, 54, 34 ],
-          "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
-          }
-        },
-        "btn1": {
-          "hide_name": 0,
-          "bits": [ 3 ],
-          "attributes": {
-            "src": "top.v:3.11-3.15"
-          }
-        },
-        "btn1_SB_LUT4_I0_O": {
-          "hide_name": 0,
-          "bits": [ 48, 50 ],
-          "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_I3_I2": {
-          "hide_name": 0,
-          "bits": [ 49, 50 ],
-          "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2": {
-          "hide_name": 0,
-          "bits": [ 53, 34 ],
-          "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 54 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:70.17-70.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI": {
-          "hide_name": 0,
-          "bits": [ 55 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:70.17-70.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
-          "hide_name": 0,
-          "bits": [ 56 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:70.17-70.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
-          "hide_name": 0,
-          "bits": [ 57 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:70.17-70.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "btn1_SB_LUT4_I0_O_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_LUT4_I2_O": {
-          "hide_name": 0,
-          "bits": [ 11, "0", 10, 12 ],
-          "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "top.v:71.33-71.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
-          }
-        },
-        "char_index": {
-          "hide_name": 0,
-          "bits": [ 63, 64, 61, 59 ],
-          "attributes": {
-            "src": "top.v:16.11-16.21"
-          }
-        },
-        "char_index_SB_DFFESR_Q_1_D": {
-          "hide_name": 0,
-          "bits": [ 60 ],
-          "attributes": {
-          }
-        },
-        "char_index_SB_DFFESR_Q_1_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 62 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:63.31-63.45|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "char_index_SB_DFFESR_Q_2_D": {
-          "hide_name": 0,
-          "bits": [ 65 ],
-          "attributes": {
-          }
-        },
-        "char_index_SB_DFFESR_Q_3_D": {
-          "hide_name": 0,
-          "bits": [ 66 ],
-          "attributes": {
-          }
-        },
-        "char_index_SB_DFFESR_Q_D": {
-          "hide_name": 0,
-          "bits": [ 58 ],
-          "attributes": {
-          }
-        },
-        "char_index_SB_DFFESR_Q_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 67 ],
-          "attributes": {
-            "abc9_carry": "00000000000000000000000000000001",
-            "src": "top.v:63.31-63.45|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
-          }
-        },
-        "char_index_SB_DFFESR_Q_E": {
-          "hide_name": 0,
-          "bits": [ 51 ],
-          "attributes": {
-          }
-        },
-        "char_index_SB_DFFESR_Q_R": {
-          "hide_name": 0,
-          "bits": [ 33, 36, 47 ],
+          "bits": [ 28, 30, 141, 34 ],
           "attributes": {
             "force_downto": "00000000000000000000000000000001",
             "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
@@ -12352,30 +14028,24 @@
           "hide_name": 0,
           "bits": [ 30, 29, 28 ],
           "attributes": {
-            "src": "top.v:13.11-13.24"
+            "src": "top.v:18.11-18.24"
           }
         },
         "current_state_SB_DFFESR_Q_1_D": {
           "hide_name": 0,
-          "bits": [ 71 ],
+          "bits": [ 50 ],
           "attributes": {
           }
         },
         "current_state_SB_DFFESR_Q_D": {
           "hide_name": 0,
-          "bits": [ 68 ],
+          "bits": [ 47 ],
           "attributes": {
           }
         },
         "current_state_SB_DFFESS_Q_D": {
           "hide_name": 0,
-          "bits": [ 72 ],
-          "attributes": {
-          }
-        },
-        "current_state_SB_DFFESS_Q_D_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 28, 29, 30, 52 ],
+          "bits": [ 33, 36, 46 ],
           "attributes": {
             "force_downto": "00000000000000000000000000000001",
             "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
@@ -12383,26 +14053,570 @@
         },
         "current_state_SB_DFFESS_Q_E": {
           "hide_name": 0,
-          "bits": [ 69 ],
+          "bits": [ 48 ],
           "attributes": {
           }
         },
         "current_state_SB_DFFESS_Q_S": {
           "hide_name": 0,
+          "bits": [ 49 ],
+          "attributes": {
+          }
+        },
+        "rx_baud_counter": {
+          "hide_name": 0,
+          "bits": [ 56, 79, 77, 74, 71, 68, 61, 53 ],
+          "attributes": {
+            "src": "top.v:23.11-23.26"
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 55 ],
+          "attributes": {
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_1_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 57, "0", 79, 56 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_2_D": {
+          "hide_name": 0,
+          "bits": [ 60 ],
+          "attributes": {
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_2_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 62, 63, 64, 65 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_2_D_SB_LUT4_O_I3_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 66 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_3_D": {
+          "hide_name": 0,
+          "bits": [ 67 ],
+          "attributes": {
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_3_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 69 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_4_D": {
+          "hide_name": 0,
+          "bits": [ 72 ],
+          "attributes": {
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_4_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
           "bits": [ 70 ],
           "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_5_D": {
+          "hide_name": 0,
+          "bits": [ 75 ],
+          "attributes": {
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_5_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 73 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_6_D": {
+          "hide_name": 0,
+          "bits": [ 78 ],
+          "attributes": {
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_6_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 76 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_7_D": {
+          "hide_name": 0,
+          "bits": [ 80 ],
+          "attributes": {
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_D": {
+          "hide_name": 0,
+          "bits": [ 51 ],
+          "attributes": {
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 81 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:77.36-77.55|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_baud_counter_SB_DFFESR_Q_E": {
+          "hide_name": 0,
+          "bits": [ 52 ],
+          "attributes": {
+          }
+        },
+        "rx_bit_index": {
+          "hide_name": 0,
+          "bits": [ 92, 93, 90, 87, 84 ],
+          "attributes": {
+            "src": "top.v:24.11-24.23"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 86 ],
+          "attributes": {
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_1_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 88 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:66.37-66.53|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_2_D": {
+          "hide_name": 0,
+          "bits": [ 91 ],
+          "attributes": {
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_2_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 89 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:66.37-66.53|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D": {
+          "hide_name": 0,
+          "bits": [ 95 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:8.8-8.10"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO": {
+          "hide_name": 0,
+          "bits": [ 96 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_CARRY_CI_CO": {
+          "hide_name": 0,
+          "bits": [ 98 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO": {
+          "hide_name": 0,
+          "bits": [ 100 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O": {
+          "hide_name": 0,
+          "bits": [ 84, 4, 128, 102 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_LUT4_I3_I2": {
+          "hide_name": 0,
+          "bits": [ "0", "0", 99, 96 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_LUT4_I3_O": {
+          "hide_name": 0,
+          "bits": [ 103, 104 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_O_I2": {
+          "hide_name": 0,
+          "bits": [ "0", "0", 101, 98 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_LUT4_I3_I2": {
+          "hide_name": 0,
+          "bits": [ "0", "0", 97, 95 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top.v:65.21-65.60|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_4_D_SB_LUT4_I3_O": {
+          "hide_name": 0,
+          "bits": [ 92, 94, 102 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_D": {
+          "hide_name": 0,
+          "bits": [ 82 ],
+          "attributes": {
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 108 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:66.37-66.53|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_bit_index_SB_DFFESR_Q_E": {
+          "hide_name": 0,
+          "bits": [ 83 ],
+          "attributes": {
+          }
+        },
+        "rx_data_buffer": {
+          "hide_name": 0,
+          "bits": [ 128, 126, 124, 121, 118, 115, 113, 111 ],
+          "attributes": {
+            "src": "top.v:25.11-25.25"
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_1_D": {
+          "hide_name": 0,
+          "bits": [ 112 ],
+          "attributes": {
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_2_D": {
+          "hide_name": 0,
+          "bits": [ 114 ],
+          "attributes": {
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_3_D": {
+          "hide_name": 0,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_3_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 4, 118, 94, 119 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_4_D": {
+          "hide_name": 0,
+          "bits": [ 120 ],
+          "attributes": {
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_5_D": {
+          "hide_name": 0,
+          "bits": [ 123 ],
+          "attributes": {
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_6_D": {
+          "hide_name": 0,
+          "bits": [ 125 ],
+          "attributes": {
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_6_D_SB_LUT4_O_I2": {
+          "hide_name": 0,
+          "bits": [ 92, 102, 105 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_6_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 4, 126, 105, 116 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_7_D": {
+          "hide_name": 0,
+          "bits": [ 127 ],
+          "attributes": {
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_D": {
+          "hide_name": 0,
+          "bits": [ 109 ],
+          "attributes": {
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_D_SB_LUT4_O_I2": {
+          "hide_name": 0,
+          "bits": [ 4, 113, 106, 107 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 4, 121, 105, 122 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_data_buffer_SB_DFFE_Q_E": {
+          "hide_name": 0,
+          "bits": [ 110 ],
+          "attributes": {
+          }
+        },
+        "rx_ready": {
+          "hide_name": 0,
+          "bits": [ 130 ],
+          "attributes": {
+            "src": "top.v:26.11-26.19"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D": {
+          "hide_name": 0,
+          "bits": [ 58, 59 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3": {
+          "hide_name": 0,
+          "bits": [ 131 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 132 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 133 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 134 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_D_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 135 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:51.17-51.37|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E": {
+          "hide_name": 0,
+          "bits": [ 129 ],
+          "attributes": {
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 64 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:76.17-76.38|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E_SB_LUT4_O_I3_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 136 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:76.17-76.38|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 137 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:76.17-76.38|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_DFFE_Q_E_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 138 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:76.17-76.38|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O": {
+          "hide_name": 0,
+          "bits": [ 28, 139, 140 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2": {
+          "hide_name": 0,
+          "bits": [ 141 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:125.17-125.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 142 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:125.17-125.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 143 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:125.17-125.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ 144 ],
+          "attributes": {
+            "abc9_carry": "00000000000000000000000000000001",
+            "src": "top.v:125.17-125.35|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/abc9_model.v:4.9-4.11"
+          }
+        },
+        "rx_ready_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_LUT4_I2_O": {
+          "hide_name": 0,
+          "bits": [ 11, "0", 19, 20 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top.v:126.33-126.49|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/arith_map.v:62.5-70.4|/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_state": {
+          "hide_name": 0,
+          "bits": [ 63, 62, "0" ],
+          "attributes": {
+            "src": "top.v:22.11-22.19"
+          }
+        },
+        "rx_state_SB_DFFESR_Q_D": {
+          "hide_name": 0,
+          "bits": [ 146 ],
+          "attributes": {
+          }
+        },
+        "rx_state_SB_DFFESR_Q_E": {
+          "hide_name": 0,
+          "bits": [ 147 ],
+          "attributes": {
+          }
+        },
+        "rx_state_SB_DFFESS_Q_D": {
+          "hide_name": 0,
+          "bits": [ 84, 87, 148 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "rx_state_SB_DFFESS_Q_D_SB_LUT4_I3_O": {
+          "hide_name": 0,
+          "bits": [ 4, 54, 85, 59 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "uart_rx": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "top.v:4.11-4.18"
           }
         },
         "uart_tx": {
           "hide_name": 0,
-          "bits": [ 4 ],
+          "bits": [ 3 ],
           "attributes": {
-            "src": "top.v:4.16-4.23"
+            "src": "top.v:3.16-3.23"
           }
         },
         "uart_tx_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 73 ],
+          "bits": [ 149 ],
           "attributes": {
             "force_downto": "00000000000000000000000000000001",
             "single_bit_vector": "00000000000000000000000000000001",
@@ -12411,54 +14625,58 @@
         },
         "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D": {
           "hide_name": 0,
-          "bits": [ 74 ],
+          "bits": [ 150 ],
           "attributes": {
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 28, 29, 30, 153 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O_I3_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 39, 154, 155, 156 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_D_SB_LUT4_O_I3_SB_LUT4_O_I3_SB_LUT4_O_1_I3": {
+          "hide_name": 0,
+          "bits": [ 39, 46, 157, 158 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
           }
         },
         "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_E": {
           "hide_name": 0,
-          "bits": [ 75 ],
+          "bits": [ 151 ],
           "attributes": {
           }
         },
         "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_E_SB_LUT4_O_I3": {
           "hide_name": 0,
-          "bits": [ 28, 29, 30, 46 ],
+          "bits": [ 28, 29, 30, 145 ],
           "attributes": {
             "force_downto": "00000000000000000000000000000001",
             "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_E_SB_LUT4_O_I3_SB_LUT4_I3_O": {
+          "hide_name": 0,
+          "bits": [ 32 ],
+          "attributes": {
           }
         },
         "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S": {
           "hide_name": 0,
-          "bits": [ 39, 76, 77, 78 ],
+          "bits": [ 152 ],
           "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
-          }
-        },
-        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S_SB_LUT4_O_1_I3": {
-          "hide_name": 0,
-          "bits": [ 29, 30, 79 ],
-          "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
-          }
-        },
-        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S_SB_LUT4_O_1_I3_SB_LUT4_O_I3": {
-          "hide_name": 0,
-          "bits": [ 42, 41, 80 ],
-          "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
-          }
-        },
-        "uart_tx_SB_LUT4_O_I3_SB_DFFESS_Q_S_SB_LUT4_O_2_I3": {
-          "hide_name": 0,
-          "bits": [ 61, 42, 41, 81 ],
-          "attributes": {
-            "force_downto": "00000000000000000000000000000001",
-            "src": "/Users/isaacahn/oss-cad-suite/libexec/../share/yosys/ice40/cells_map.v:6.21-6.22"
           }
         }
       }
