@@ -37,9 +37,12 @@ def com_finder(exp=1):
                 return com_port
         elif exp > 1:
             print(f"Found {len(kp_ports)} KitProg devices")
+            if len(kp_ports) != exp:
+                print(f"COM port mismatch!\nExpected: {exp}, Found: {len(kp_ports)}")
+                return 1
             com_ports = []
             for p in kp_ports:
-                com_ports.append(f"{p.device}: {p.description}") 
+                com_ports.append(f"{p}".split()[0])
             return com_ports
 
     else:
