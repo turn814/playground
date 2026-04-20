@@ -1,0 +1,9 @@
+set_io clk              35  # 12 MHz clock
+set_io tx_line          9   # uart TxD
+set_io rx_line          6   # uart RxD
+set_io rts              19  # uart RTS
+set_io dbg_empty        26  # buffer empty to red LED
+set_io dbg_read_ptr_0   23  # read pointer to a green LED
+set_io dbg_read_ptr_1   27  # read pointer to a green LED
+set_io dbg_read_ptr_2   21  # read pointer to a green LED
+set_io dbg_read_ptr_3   25  # read pointer to a green LED
